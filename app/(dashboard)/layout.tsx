@@ -6,7 +6,7 @@ import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { ReactNode } from "react";
 
 function Layout({ children }: { children: ReactNode }) {
-  const afterSignOutUrl = process.env.NEXT_PUBLIC_CLERK_SIGN_IN_URL;
+  const afterSignOutUrl = process.env.NEXT_PUBLIC_CLERK_AFTER_SIGN_OUT_URL;
 
   return (
     <div className="flex flex-col min-h-screen min-w-full bg-background max-h-screen">
@@ -19,7 +19,7 @@ function Layout({ children }: { children: ReactNode }) {
             <UserButton afterSignOutUrl={afterSignOutUrl} />
           </SignedIn>
           <SignedOut>
-            <Button asChild variant={"secondary"}>
+            <Button asChild variant={"default"}>
               <SignInButton />
             </Button>
           </SignedOut>
